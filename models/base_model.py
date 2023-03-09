@@ -52,13 +52,17 @@ class BaseModel:
         """
         storage.save()
         self.updated_at = datetime.now()
+        return True
 
     def to_dict(self):
         """
         This method returns a dictionary of attributes for
         a particular instance
         """
-        attr_dict = self.__dict__
+        # make a copy of the object's dictionary of attributes(__dict__)
+        # this is so that attr_dict and __dict__ don't reference the same
+        # object
+        attr_dict = self.__dict__.copy()
         attr_dict["__class__"] = self.__class__.__name__
         attr_dict["created_at"] = self.created_at.isoformat()
         attr_dict["updated_at"] = self.updated_at.isoformat()
