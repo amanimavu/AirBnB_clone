@@ -110,7 +110,7 @@ class HBNBCommand(cmd.Cmd):
             try:
                 Id = args[1]
             except IndexError:
-                print("** instance id missing")
+                print("** instance id missing **")
                 return
             else:
                 return "{}.{}".format(args[0], Id)
