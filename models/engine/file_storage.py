@@ -39,14 +39,11 @@ class FileStorage:
         python dictionary to a specific file. This is
         to make the console program persistent.
         """
-        file = open(type(self).__file_path, "w")
-        new_objects = {}
-        for key, value in type(self).__objects.items():
-            new_objects[key] = value.to_dict()
-        json.dump(new_objects, file)
-        for value in type(self).__objects.values():
-            value.created_at = datetime.fromisoformat(value.created_at)
-            value.updated_at = datetime.fromisoformat(value.updated_at)
+        with open(type(self).__file_path, "w") as file:
+            new_objects = {}
+            for key, value in type(self).__objects.items():
+                new_objects[key] = value.to_dict()
+            json.dump(new_objects, file)
 
     def reload(self):
         """
