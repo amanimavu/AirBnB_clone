@@ -83,7 +83,7 @@ class HBNBCommand(cmd.Cmd):
             return
         try:
             Model = globals()[cls]
-        except AttributeError:
+        except KeyError:
             print("** class doesn't exist **")
         else:
             obj = Model()
@@ -103,7 +103,7 @@ class HBNBCommand(cmd.Cmd):
             return
         try:
             cls = globals()[args[0]]
-        except AttributeError:
+        except KeyError:
             print("** class doesn't exist **")
             return
         else:
@@ -170,7 +170,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             try:
                 cls = globals()[line]
-            except AttributeError:
+            except KeyError:
                 print("** class doesn't exist **")
                 return
             else:
