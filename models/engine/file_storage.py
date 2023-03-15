@@ -71,3 +71,5 @@ class FileStorage:
                 for key, value in saved_objs.items():
                     cls = locals()[value["__class__"]]
                     type(self).__objects[key] = cls(**value)
+            finally:
+                file.close()

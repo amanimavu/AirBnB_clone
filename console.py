@@ -31,13 +31,13 @@ class HBNBCommand(cmd.Cmd):
         """
         Quit is used to exit the interpreter
         """
-        return True
+        pass
 
     def do_EOF(self, arg):
         """
         This command is used to exit the interpreter
         """
-        return True
+        pass
 
     def postcmd(self, stop, line):
         if line == "quit" or line == "EOF":
