@@ -27,14 +27,13 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(type(self.base_1.id), str)
         self.assertEqual(self.base_1.created_at, self.base_1.updated_at)
 
-    @unittest.expectedFailure
     def test_save(self):
         """
         This test validates that the datetime for creation
         and update are different when the object is saved
         """
         self.base_1.save()
-        self.assertEqual(self.base_1.created_at, self.base_1.updated_at)
+        self.assertNotEqual(self.base_1.created_at, self.base_1.updated_at)
 
     def test_to_dict(self):
         """
