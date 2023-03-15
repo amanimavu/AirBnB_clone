@@ -50,8 +50,8 @@ class BaseModel:
         """
         This method is used to save created instances
         """
-        storage.save()
         self.updated_at = datetime.now()
+        storage.save()
         return True
 
     def to_dict(self):
