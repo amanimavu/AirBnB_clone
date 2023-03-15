@@ -27,17 +27,23 @@ class HBNBCommand(cmd.Cmd):
     """
     prompt = '(hbtn): '
 
-    def do_quit(self, line):
+    def do_quit(self, arg):
         """
         Quit is used to exit the interpreter
         """
-        return " "
+        return True
 
-    def do_EOF(self, line):
+    def do_EOF(self, arg):
         """
         This command is used to exit the interpreter
         """
-        return " "
+        return True
+
+    def postcmd(self, stop, line):
+        if line == "quit" or line == "EOF":
+            return True
+        else:
+            return stop
 
     def emptyline(self):
         """
