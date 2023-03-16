@@ -52,13 +52,17 @@ class TestFileStorage(unittest.TestCase):
         the save method modifies file.json
         """
         self.storage.reload()
-        path = "file.json"
-        file_stat_1 = os.stat(path)
+        file_path = "file.json"
+        try:
+            os.remove(file_path)
+        except:
+            pass
+        self.assertFalse(os.path.exists(file_path))
         self.storage.new(self.base)
         self.storage.save()
-        file_stat_2 = os.stat(path)
-        self.assertTrue(os.path.exists(path))
-        self.assertFalse(file_stat_1 == file_stat_2)
+        file_stat = os.stat(file_path)
+        self.assertTrue(os.path.exists(file_path))
+        self.assertTrue(file_stat.st_size > 0)
 
     def test_update(self):
         self.assertEqual(len(self.storage._FileStorage__objects), 0)
