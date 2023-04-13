@@ -1,0 +1,101 @@
+* {
+	box-sizing: border-box;
+}
+
+section.places h1 {
+	font-size: 30px;
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+section.places div.container {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 0;
+}
+
+section.places div.container article {
+	width: 390px;
+	margin: 20px;
+	border: solid 1px #FF5A5F;
+	border-radius: 4px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	padding: 15px
+}
+
+section.places div.container article > div:first-child {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
+section.places div.container article > div:first-child h2 {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+section.places div.container article .information > div {
+	width: 100px;
+	padding-top: 5px;
+}
+
+section.places div.container article div.information div > div {
+	height: 50px;
+	width: 50px;
+	margin-right: auto;
+	margin-left: auto;
+	background-repeat: no-repeat;
+}
+
+section.places div.container article div.information div.max_guest div {
+	background-image: url(../images/icon_group.png);
+}
+
+section.places div.container article div.information div.number_rooms div {
+	background-image: url(../images/icon_bed.png);
+}
+
+section.places div.container article div.information div.number_bathrooms div {
+	background-image: url(../images/icon_bath.png);
+}
+
+section.places div article h2 {
+	font-size: 30px;
+	margin-top: 0;
+}
+
+section.places article div.price_by_night {
+	color: #FF5A5F;
+	border: solid 4px #FF5A5F;
+	min-width: 60px;
+	height: 60px;
+	font-size: 20px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+section.places div.container div.information {
+	display: flex;
+	justify-content: space-around;
+	height: 80px;
+	border-top: solid 1px #DDDDDD;
+	border-bottom: solid 1px #DDDDDD;
+	margin-bottom: 15px;
+}
+
+section.places div.container div.user,
+section.places div.container div.description {
+	text-align: left;
+}
+
+section.places div.container div.description p {
+	margin-top: 5px;
+	margin-bottom: 30px;
+}

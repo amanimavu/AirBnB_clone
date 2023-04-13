@@ -1,0 +1,28 @@
+* {
+	box-sizing: border-box;
+}
+
+.places h1 {
+	font-size: 30px;
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+.places div {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.places div article {
+	width: 390px;
+	margin: 20px;
+	border: solid 1px #FF5A5F;
+	border-radius: 4px;
+	text-align: center;
+}
+
+.places div article h2 {
+	font-size: 30px;
+}
