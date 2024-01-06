@@ -32,14 +32,14 @@ class HBNBCommand(cmd.Cmd):
         """
         Quit is used to exit the interpreter
         """
-        print(file=sys.stderr)
+        print(file=sys.stderr, end="")
         return True
 
     def do_EOF(self, arg):
         """
         This command is used to exit the interpreter
         """
-        print(file=sys.stderr)
+        print(file=sys.stderr, end="")
         return True
 
     def emptyline(self):
