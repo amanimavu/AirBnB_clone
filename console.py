@@ -4,6 +4,7 @@ module: console
 resource: a class called HBNBCommand
 """
 import cmd
+import sys
 from models.base_model import BaseModel
 from models.user import User
 from models.city import City
@@ -31,13 +32,14 @@ class HBNBCommand(cmd.Cmd):
         """
         Quit is used to exit the interpreter
         """
+        print("The command intepreter was exited", file=sys.stderr)
         return True
 
     def do_EOF(self, arg):
         """
         This command is used to exit the interpreter
         """
-        print()
+        print("The command intepreter was exited", file=sys.stderr)
         return True
 
     def emptyline(self):
