@@ -32,14 +32,22 @@ class HBNBCommand(cmd.Cmd):
         """
         Quit is used to exit the interpreter
         """
-        print("The command intepreter was exited", file=sys.stderr)
+        try:
+            sys.exit()
+            sys.stderr.write("The command intepreter has exited\n")
+        except Exception:
+            print("An error occured when writing to stderr")
         return True
 
     def do_EOF(self, arg):
         """
         This command is used to exit the interpreter
         """
-        print("The command intepreter was exited", file=sys.stderr)
+        try:
+            sys.exit()
+            sys.stderr.write("The command intepreter has exited\n")
+        except Exception:
+            print("An error occured when writing to stderr")
         return True
 
     def emptyline(self):
